@@ -7,6 +7,7 @@ class SudokuGame
   end
 
   def initialize(board)
+    puts "game is booting"
     @board = board
   end
 
@@ -47,6 +48,7 @@ class SudokuGame
   end
 
   def play_turn
+    puts "playing turn"
     board.render
     pos = get_pos
     val = get_val
@@ -54,6 +56,7 @@ class SudokuGame
   end
 
   def run
+    puts "running"
     play_turn until solved?
     board.render
     puts "Congratulations, you win!"
@@ -80,3 +83,4 @@ end
 
 
 game = SudokuGame.from_file("puzzles/sudoku1.txt")
+game.run
