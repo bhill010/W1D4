@@ -39,6 +39,7 @@ class Board
   end
 
   def render
+    puts "renderding"
     puts "  #{(0..8).to_a.join(" ")}"
     grid.each_with_index do |row, i|
       puts "#{i} #{row.join(" ")}"
@@ -50,7 +51,10 @@ class Board
     grid.size
   end
 
-  alias_method :rows, :size
+  #alias_method :rows, :size
+  def rows
+    grid
+  end
 
   def solved?
     rows.all? { |row| solved_set?(row) } &&
